@@ -1,4 +1,4 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.6.0;
 
 import "./IERC165.sol";
 
@@ -32,7 +32,7 @@ abstract contract IERC721 is IERC165 {
      * - If the caller is not `from`, it must be have been allowed to move this
      * NFT by either {approve} or {setApprovalForAll}.
      */
-    function safeTransferFrom(address from, address to, uint256 tokenId) public virtual;
+    function safeTransferFrom(address from, address to, uint256 tokenId) internal virtual;
     /**
      * @dev Transfers a specific NFT (`tokenId`) from one account (`from`) to
      * another (`to`).
@@ -41,13 +41,13 @@ abstract contract IERC721 is IERC165 {
      * - If the caller is not `from`, it must be approved to move this NFT by
      * either {approve} or {setApprovalForAll}.
      */
-    function transferFrom(address from, address to, uint256 tokenId) public virtual;
-    function approve(address to, uint256 tokenId) public virtual;
-    function getApproved(uint256 tokenId) public view virtual returns (address operator);
+    function transferFrom(address from, address to, uint256 tokenId) internal virtual;
+    function approve(address to, uint256 tokenId) internal virtual;
+    function getApproved(uint256 tokenId) internal view virtual returns (address operator);
 
-    function setApprovalForAll(address operator, bool _approved) public virtual;
-    function isApprovedForAll(address owner, address operator) public view virtual returns (bool);
+    function setApprovalForAll(address operator, bool _approved) internal virtual;
+    function isApprovedForAll(address owner, address operator) internal view virtual returns (bool);
 
 
-    function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data) public virtual;
+    function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data) internal virtual;
 }

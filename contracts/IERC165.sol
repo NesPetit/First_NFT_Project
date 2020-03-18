@@ -1,4 +1,5 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.6.0;
+
 /**
  * @dev Interface of the ERC165 standard, as defined in the
  * https://eips.ethereum.org/EIPS/eip-165[EIP].

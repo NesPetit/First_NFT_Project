@@ -9,13 +9,13 @@ COPY web_blockchain/src ./src/web_blockchain
 COPY web_blockchain/public ./public/web_blockchain
 COPY contracts . 
 COPY migrations . 
-COPY node_modules . 
 COPY package-lock.json . 
 COPY README.md . 
-COPY truffle-config.js 
+COPY truffle-config.js . 
 
-RUN truffle compile
 RUN npm install
+RUN npm install -g truffle
+RUN truffle compile
 
 EXPOSE 8080
 VOLUME /app/logs

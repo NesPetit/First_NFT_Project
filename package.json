@@ -1,0 +1,24 @@
+{
+  "name": "TD07_Blockchain",
+  "version": "1.0.0",
+  "description": "TD07_Blockchain",
+  "main": "truffle-config.js",
+  "dependencies": {
+    "create-react-app": "^3.4.0",
+    "dotenv": "^8.2.0",
+    "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "truffle compile",
+    "docker:up": "docker run --name projet_b -d -p 80:80 projet",
+    "docker:stop": "docker stop projet_b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git/NesPetit/app_react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
