@@ -1,7 +1,7 @@
 pragma solidity ^0.6.0;
 import "./ERC721.sol";
 
-contract MyContract is ERC721{
+contract Contrat is ERC721{
 
     uint256 private _index = 0;
 	

@@ -23,6 +23,9 @@
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 const HDWalletProvider = require("truffle-hdwallet-provider");
+const MNEMONIC = "canyon tuna gossip cancel love syrup gas lottery dilemma bracket clay smoke"; //Rinkeby
+//const MNEMONIC = "walnut symptom hazard fever hollow assume utility suit budget fish sell flower"; //Ganache
+
 require('dotenv').config()
 module.exports = {
   /**
@@ -44,8 +47,8 @@ module.exports = {
     //
     ganache: {
       host: "127.0.0.1",     // Localhost (default: none)
-      port: 8545,            // Standard Ethereum port (default: none)
-      network_id: "5777",       // Any network (default: none)
+      port: 7545,            // Standard Ethereum port (default: none)
+      network_id: "*",       // Any network (default: none)
      },
 
     // Another network with more advanced options...
@@ -76,7 +79,7 @@ module.exports = {
       // production: true    // Treats this network as if it was a public net. (default: false)
     // }
     rinkeby: {
-      provider: ()=>  new HDWalletProvider( process.env.MNENOMIC, "https://rinkeby.infura.io/v3/"+process.env.INFURA_API_KEY),
+      provider: ()=>  new HDWalletProvider( MNEMONIC, "https://rinkeby.infura.io/v3/fdbc868a84454a398f9b7a4ec9a38f9d"),
       network_id: '*',
       gas: 4612388 // Gas limit used for deploys
     }
